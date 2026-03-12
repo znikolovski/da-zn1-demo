@@ -11,66 +11,51 @@
  */
 
 :root {
-  /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  /* ANZ colors */
+  --background-color: #fff;
+  --light-color: #f7f7f7;
+  --dark-color: #004165;
+  --text-color: #494949;
+  --link-color: #0072ac;
+  --link-hover-color: #004165;
+  --anz-primary-blue: #007dba;
+  --anz-dark-blue: #004165;
+  --anz-link-blue: #0072ac;
+  --anz-light-grey: #f7f7f7;
+  --anz-alert-bg: #efefef;
+  --anz-light-blue-bg: #eef2f6;
+  --anz-border-grey: #ccc;
+  --anz-light-text: #737373;
+  --anz-footer-text: #666;
+  --anz-gradient-end: #005682;
 
-  /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  /* fonts — ANZ uses Arial throughout */
+  --body-font-family: arial, helvetica, sans-serif;
+  --heading-font-family: arial, helvetica, sans-serif;
 
   /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  --body-font-size-m: 15px;
+  --body-font-size-s: 14px;
+  --body-font-size-xs: 13px;
 
   /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
+  --heading-font-size-xxl: 35.6px;
+  --heading-font-size-xl: 27px;
+  --heading-font-size-l: 21.6px;
+  --heading-font-size-m: 18.8px;
+  --heading-font-size-s: 16px;
+  --heading-font-size-xs: 14px;
 
   /* nav heights */
   --nav-height: 64px;
   --breadcrumbs-height: 34px;
   --header-height: var(--nav-height);
+
+  /* layout */
+  --section-max-width: 1164px;
 }
 
-/* fallback fonts */
-@font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
-  src: local('Arial');
-}
-
-@font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
-  src: local('Arial');
-}
-
-@media (width >= 900px) {
-  :root {
-    /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
-
-    /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
-    --heading-font-size-m: 22px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 18px;
-  }
-}
+/* ANZ uses Arial — no custom font files needed */
 
 body {
   display: none;
@@ -79,7 +64,7 @@ body {
   color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  line-height: 1.6;
+  line-height: 1.47;
 }
 
 body.appear {
@@ -115,9 +100,11 @@ h6 {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
   font-family: var(--heading-font-family);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.25;
   scroll-margin: 40px;
+  color: var(--anz-dark-blue);
+  letter-spacing: -0.2px;
 }
 
 h1 { font-size: var(--heading-font-size-xxl); }
@@ -178,19 +165,20 @@ a.button:any-link,
 button {
   box-sizing: border-box;
   display: inline-block;
-  max-width: 100%;
+  max-width: 250px;
   margin: 12px 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 10px 16px;
   font-family: var(--body-font-family);
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
+  font-size: var(--body-font-size-m);
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
+  background-color: var(--background-color);
+  color: var(--anz-link-blue);
   cursor: pointer;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -200,7 +188,8 @@ a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--link-hover-color);
+  background-color: var(--light-color);
+  color: var(--anz-dark-blue);
   cursor: pointer;
 }
 
@@ -212,9 +201,9 @@ button:disabled:hover {
 
 a.button.secondary,
 button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color);
+  background-color: transparent;
+  border: 1px solid var(--anz-link-blue);
+  color: var(--anz-link-blue);
 }
 
 main img {
@@ -236,17 +225,23 @@ main img {
 
 /* sections */
 main > .section {
-  margin: 40px 0;
+  margin: 0;
+  padding: 40px 0;
 }
 
 main > .section > div {
-  max-width: 1200px;
+  max-width: var(--section-max-width);
   margin: auto;
   padding: 0 24px;
 }
 
 main > .section:first-of-type {
   margin-top: 0;
+}
+
+/* Hero sits flush against alert banner above */
+main > .section.hero-container {
+  padding-top: 0;
 }
 
 @media (width >= 900px) {
@@ -261,4 +256,28 @@ main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
   padding: 40px 0;
+}
+
+main .section.light-grey {
+  background-color: var(--anz-light-grey);
+  margin: 0;
+  padding: 40px 0;
+}
+
+main .section.light-blue {
+  background-color: var(--anz-light-blue-bg);
+  margin: 0;
+  padding: 40px 0;
+}
+
+/* Hide decorative separator line images */
+main .section > div > p > img[src*="Line.png"],
+main .section > div > p > img[src*="horizontal-line"],
+main .section > div > p > picture:only-child {
+  display: none;
+}
+
+main .section > div > p:has(> img[src*="Line.png"]),
+main .section > div > p:has(> img[src*="horizontal-line"]) {
+  display: none;
 }

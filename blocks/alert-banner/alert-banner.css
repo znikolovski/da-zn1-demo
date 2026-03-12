@@ -1,0 +1,36 @@
+/* Alert Banner — ANZ gray notification bar */
+
+/* Reset section-level styling — alert is edge-to-edge */
+main .section.alert-banner-container {
+  padding: 0;
+  background-color: var(--anz-alert-bg);
+}
+
+.alert-banner-container .alert-banner-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.alert-banner {
+  background-color: var(--anz-alert-bg);
+  padding: 12px 24px;
+  text-align: center;
+  font-size: var(--body-font-size-m);
+  line-height: 1.47;
+  color: var(--text-color);
+}
+
+.alert-banner p {
+  margin: 0;
+}
+
+.alert-banner a:any-link {
+  color: var(--anz-link-blue);
+  text-decoration: underline;
+}
+
+@media (width >= 900px) {
+  .alert-banner {
+    padding: 12px 32px;
+  }
+}

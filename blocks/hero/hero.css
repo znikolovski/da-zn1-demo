@@ -1,3 +1,10 @@
+/* Hero Block — ANZ styling
+ * Full-width background image with left-aligned text overlay
+ */
+.hero-container {
+  padding: 0;
+}
+
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -5,33 +12,74 @@
 
 .hero {
   position: relative;
-  padding: 40px 24px;
   min-height: 300px;
+  display: flex;
+  flex-direction: column;
 }
 
-.hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
-}
-
-.hero picture {
+.hero > div:first-child {
   position: absolute;
-  z-index: -1;
   inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero > div:first-child picture,
+.hero > div:first-child img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+}
+
+.hero > div:last-child {
+  position: relative;
+  z-index: 1;
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: 40px 24px;
+  width: 100%;
   box-sizing: border-box;
 }
 
-.hero img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+.hero h1 {
+  color: var(--background-color);
+  font-size: var(--heading-font-size-xxl);
+  line-height: 1.24;
+  letter-spacing: -0.2px;
+  margin-top: 0;
+}
+
+.hero p {
+  color: var(--background-color);
+  font-size: var(--body-font-size-m);
+  line-height: 1.47;
+}
+
+.hero a.button:any-link {
+  background-color: var(--background-color);
+  color: var(--anz-link-blue);
+  border-radius: 3px;
+  padding: 10px 16px;
+  font-weight: 400;
+  max-width: 250px;
+}
+
+.hero a.button:hover {
+  background-color: var(--anz-light-grey);
+  color: var(--anz-dark-blue);
 }
 
 @media (width >= 900px) {
   .hero {
-    padding: 40px 32px;
+    min-height: 460px;
+  }
+
+  .hero > div:last-child {
+    padding: 60px 32px;
+    max-width: 60%;
+    margin: 0;
+    margin-left: calc((100% - var(--section-max-width)) / 2);
   }
 }

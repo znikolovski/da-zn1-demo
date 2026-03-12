@@ -1,0 +1,7 @@
+{
+  "type": "da",
+  "projectType": "da",
+  "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json",
+  "contentSource": "https://content.da.live/aemsites/da-block-collection/",
+  "contentHostUrl": "content.da.live"
+}

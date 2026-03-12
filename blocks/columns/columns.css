@@ -1,10 +1,14 @@
+/* Columns Block — ANZ styling */
 .columns > div {
   display: flex;
   flex-direction: column;
+  gap: 24px;
 }
 
+/* Inline images (icons, logos) keep natural size */
 .columns img {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .columns > div > div {
@@ -15,19 +19,244 @@
   order: 0;
 }
 
+/* Full-width images in dedicated image columns */
+/* stylelint-disable-next-line no-descending-specificity */
 .columns > div > .columns-img-col img {
+  width: 100%;
   display: block;
+}
+
+/* ANZ link styling within columns — text links, not buttons */
+.columns a:any-link {
+  color: var(--anz-link-blue);
+  text-decoration: none;
+  font-size: var(--body-font-size-m);
+}
+
+/* Link chevron indicators (trailing >) */
+.columns a.button:any-link::after {
+  content: ' \203A';
+  font-weight: 700;
+  padding-left: 4px;
+}
+
+.columns a:hover {
+  text-decoration: underline;
+  color: var(--anz-dark-blue);
+}
+
+/* Override button styling in columns — show as text links */
+/* stylelint-disable-next-line no-descending-specificity */
+.columns a.button:any-link {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: var(--anz-link-blue);
+  font-weight: 400;
+  white-space: normal;
+  text-align: left;
+  display: inline;
+  max-width: none;
+}
+
+.columns a.button:hover {
+  background: none;
+  text-decoration: underline;
+}
+
+/* Badge styling for category labels (em/italic text) */
+.columns em {
+  display: inline-block;
+  background-color: var(--anz-dark-blue);
+  color: var(--background-color);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12.6px;
+  line-height: 1.6;
+  padding: 2px 12px 4px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+/* Strong links are CTA buttons — no chevron */
+.columns strong a.button:any-link {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid var(--anz-link-blue);
+  color: var(--anz-link-blue);
+  border-radius: 3px;
+  padding: 10px 16px;
+  font-weight: 400;
+  max-width: 250px;
+  white-space: nowrap;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.columns strong a.button:any-link::after {
+  content: none;
+}
+
+.columns strong a.button:hover {
+  background-color: var(--anz-light-grey);
+  color: var(--anz-dark-blue);
+  text-decoration: none;
+}
+
+/* Headings in columns */
+.columns h2 {
+  color: var(--anz-dark-blue);
+  font-size: var(--heading-font-size-xl);
+  line-height: 1.33;
+  margin-top: 0;
+}
+
+.columns h3 {
+  color: var(--anz-dark-blue);
+  font-size: var(--heading-font-size-l);
+  line-height: 1.3;
+}
+
+/* Paragraph styling */
+.columns p {
+  color: var(--text-color);
+  font-size: var(--body-font-size-m);
+  line-height: 1.47;
+}
+
+/* List styling in columns */
+.columns ul {
+  padding-left: 20px;
+  color: var(--text-color);
+}
+
+.columns li {
+  margin-bottom: 8px;
+  line-height: 1.47;
+}
+
+/* Single-column notice/card — icon and text inline */
+.columns.columns-1-cols {
+  border: 1px solid var(--anz-border-grey);
+  border-radius: 3px;
+  padding: 30px;
+  background-color: #f0faff;
+}
+
+.columns.columns-1-cols > div > div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.columns.columns-1-cols > div > div > p {
+  margin: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.columns.columns-1-cols img {
+  width: auto;
+  max-width: 48px;
+  vertical-align: middle;
+}
+
+/* Notice card section — white background outside card */
+main .section.light-grey.columns-container:has(.columns-1-cols) {
+  background-color: var(--background-color);
+}
+
+/* 2-column feature layout — constrain image height */
+.columns.columns-2-cols > div > .columns-img-col img {
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+/* Calculator grid — spacing and layout */
+.columns.columns-calculator-grid {
+  margin-top: 40px;
+}
+
+.columns.columns-calculator-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: var(--anz-light-blue-bg);
+  border-radius: 3px;
+}
+
+.columns.columns-calculator-grid li {
+  margin: 0;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--background-color);
+}
+
+.columns.columns-calculator-grid li:last-child {
+  border-bottom: none;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.columns.columns-calculator-grid a:any-link {
+  font-size: var(--body-font-size-m);
+  color: var(--anz-link-blue);
+}
+
+/* No chevrons on calculator grid links */
+.columns.columns-calculator-grid a.button:any-link::after {
+  content: none;
+}
+
+/* 4-column banking links — no chevrons on plain links */
+.columns.columns-4-cols a.button:any-link::after {
+  content: none;
 }
 
 @media (width >= 900px) {
   .columns > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 30px;
   }
 
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+
+  /* Notice card stays single row */
+  .columns.columns-1-cols > div > div {
+    flex-wrap: nowrap;
+  }
+
+  /* Calculator grid — heading narrow, grid wide */
+  .columns.columns-calculator-grid > div > div:first-child {
+    flex: 0 0 auto;
+    max-width: 280px;
+  }
+
+  .columns.columns-calculator-grid > div > div:last-child {
+    flex: 1;
+  }
+
+  .columns.columns-calculator-grid ul {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .columns.columns-calculator-grid li {
+    border-right: 1px solid var(--background-color);
+  }
+
+  /* Remove right border from even (right-column) items */
+  .columns.columns-calculator-grid li:nth-child(even) {
+    border-right: none;
+  }
+
+  /* Remove bottom border from last row */
+  .columns.columns-calculator-grid li:nth-last-child(-n+2) {
+    border-bottom: none;
   }
 }

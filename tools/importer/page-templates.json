@@ -1,0 +1,152 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.anz.com.au/personal",
+        "https://www.anz.com.au/personal/"
+      ],
+      "description": "ANZ personal banking homepage with hero banner, quick links, feature sections, calculators, app promo, and support sections",
+      "blocks": [
+        {
+          "name": "alert-banner",
+          "instances": [
+            ".butter-bar"
+          ]
+        },
+        {
+          "name": "hero",
+          "instances": [
+            ".hero.hero--fivefourthree-logon"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            ".container--four-columns",
+            ".container--three-columns",
+            ".border.box--pale-blue",
+            ".container--eightfour",
+            ".container--foureight"
+          ]
+        },
+        {
+          "name": "accordion",
+          "instances": [
+            ".accordion.accordion--open"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1-alert-banner",
+          "name": "Alert Banner",
+          "selector": ".butter-bar",
+          "style": "light-grey",
+          "blocks": [
+            "alert-banner"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2-hero",
+          "name": "Hero Banner",
+          "selector": ".hero--container",
+          "style": null,
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3-banking-with-anz",
+          "name": "Banking with ANZ",
+          "selector": ".container--four-columns",
+          "style": null,
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4-notice",
+          "name": "Federal Court Notice",
+          "selector": ".border.box--pale-blue",
+          "style": "light-grey",
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5-your-money-matters",
+          "name": "Your Money Matters",
+          "selector": ".container--four.container--three-columns",
+          "style": null,
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6-cost-of-living",
+          "name": "Cost of Living Support",
+          "selector": ".columns:has(h2:contains('Cost of living'))",
+          "style": null,
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-7-calculators",
+          "name": "Calculators and Tools",
+          "selector": ".inpagenav",
+          "style": null,
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-8-anz-plus",
+          "name": "ANZ Plus App Promo",
+          "selector": ".container--matchheight.container--three-columns",
+          "style": null,
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-9-need-help",
+          "name": "Need Help",
+          "selector": ".columns:has(h2:contains('Need help'))",
+          "style": null,
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-10-important-info",
+          "name": "Important Information",
+          "selector": ".accordion.accordion--open",
+          "style": null,
+          "blocks": [
+            "accordion"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-11-footer",
+          "name": "Footer",
+          "selector": "footer.footer",
+          "style": "light-grey",
+          "blocks": [],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}
